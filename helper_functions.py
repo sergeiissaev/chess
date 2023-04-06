@@ -22,6 +22,8 @@ def select_random_opening() -> Tuple[str, int, str]:
 
 def print_moves_white(turn, move_sequence):
     move = input("Enter your move: ")
+    if turn * 2 == len(move_sequence):
+        raise ValueError(f"Incomplete opening! Please find this opening, run stockfish and complete the line.")
     while move_sequence[turn*2] != move:
         print("Wrong move, try again!")
         print(f"Right move: {move_sequence[turn * 2]}")
