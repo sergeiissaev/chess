@@ -4,7 +4,7 @@ from helper_functions import select_random_opening, print_moves_white, print_mov
 
 if __name__ == "__main__":
 
-    filename, number_of_openings, move_sequence, rand_choice = select_random_opening(white_file=Path("white.txt"), black_file=Path("black.txt"))
+    filename, number_of_openings, move_sequence, rand_choice = select_random_opening(white_file=Path("white_2.txt"), black_file=Path("black_2.txt"))
     print("Welcome to the custom chess opening drilling app")
     print("Start drilling now")
     print(f"You are  {str(filename)[:-4]}, make your move")

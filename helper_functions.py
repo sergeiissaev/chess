@@ -1,13 +1,14 @@
+from pathlib import Path
 from typing import Tuple
 import random
 
-def select_random_opening() -> Tuple[str, int, str]:
+def select_random_opening(white_file: Path, black_file: Path) -> Tuple[str, int, str]:
     """Select a random opening"""
     rand_choice = random.choice([0, 1])
     if rand_choice == 0:
-        filename = "white.txt"
+        filename = white_file
     elif rand_choice ==1:
-        filename = "black.txt"
+        filename = black_file
     myarray = list()
 
     with open(filename) as file:
