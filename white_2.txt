@@ -4,6 +4,7 @@ e4 e5 f4 d5 exd5 Qxd5
 e4 e5 f4 d6 Nf3 Nc6 Bc4
 e4 e5 f4 d6 Nf3 f6 d4
 e4 e5 f4 exf4 Nf3 g5 Nc3 g4 Ne5 Qh4+ g3 fxg3 Qxg4 g2 Qxh4 Qxh1=Q Qh5
+e4 e5 f4 exf4 Nf3 g5 Nc3 g4 Ne5 Qh4+ g3 fxg3 Qxg4 Qf6
 e4 e5 f4 f5 exf5
 e4 e5 f4 Nc6 Nf3 exf4 d4 d5 exd5
 e4 e5 f4 exf4 Nf3 Bd6 d4
