@@ -14,6 +14,16 @@ def select_random_opening(white_file: Path, black_file: Path) -> Tuple[str, int,
     with open(filename) as file:
         for line in file:
             myarray.append(line.rstrip().split())
+
+    if filename == black_file:
+        unsolved = len([a for a in myarray if len(a)%2==1])
+        solved = len([a for a in myarray if len(a)%2==0])
+    else:
+        unsolved = len([a for a in myarray if len(a)%2==0])
+        solved = len([a for a in myarray if len(a)%2==1])
+    print(f"Unsolved openings account for: {unsolved} / {solved} = {round(unsolved * 100 / solved)}%")
+
+
     number_of_openings = len(myarray)
     move_sequence = myarray[random.randint(0, number_of_openings - 1)]
     return filename, number_of_openings, move_sequence, rand_choice
