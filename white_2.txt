@@ -28,10 +28,11 @@ e4 e5 f4 Nc6 Nf3 d6 Nc3 exf4 d4
 e4 e5 f4 Nc6 Nf3 d6 Nc3 exf4 Bg4
 e4 e5 f4 Nc6 Nf3 d5 exd5 Qxd5 Nc3
 e4 e5 f4 exf4 Nf3 Bd6 d4
-e4 e5 f4 exf4 Nf3 Be7 Bc4 Bh4+ Kf1
+e4 e5 f4 exf4 Nf3 Be7 Bc4 Bh4+ Kf1 c6
 e4 e5 f4 exf4 Nf3 Ne7 d4
 e4 e5 f4 exf4 Nf3 h6 Nc3 g5 d4 Bg7 g3 fxg3 hxg3
-e4 e5 f4 exf4 Nf3 h6 Nc3 Nc6
+e4 e5 f4 exf4 Nf3 h6 Nc3 Nc6 d4
+e4 e5 f4 exf4 Nf3 h6 Nc3 g5 d4
 e4 e5 f4 exf4 Nf3 g6
 e4 e5 f4 Qh4+ g3
 e4 e5 f4 Bc5
