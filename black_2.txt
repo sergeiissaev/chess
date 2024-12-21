@@ -1,6 +1,6 @@
 d4 e6 Nf3 Nf6 Nc3 d5 e3 c5
 d4 e6 Nf3 Nf6 g3 b6 Bg2 Bb7
-d4 e6 Nf3 Nf6 c4 b6 g3 Bb7 Bg2
+d4 e6 Nf3 Nf6 c4 b6 g3 Bb7 Bg2 Be7
 d4 e6 Nf3 Nf6 e3 b6 Be2 Bb7
 d4 e6 Nf3 Nf6 Bf4
 d4 e6 Bf4 Nf6 Nf3 c5
@@ -29,7 +29,7 @@ e4 e5 Nf3 Nf6 Nxe5 Nc6 Nxc6 dxc6 e5 Nd5 d4 c5
 e4 e5 Nf3 Nf6 Nxe5 Nc6 Nxc6 dxc6 e5 Nd5 Bc4 Qh4
 e4 e5 Nf3 Nf6 Nxe5 Nc6 Nxc6 dxc6 Nc3 Bc5 h3 Qd4 Qf3 Bb4
 e4 e5 Nf3 Nf6 Nxe5 d6 Nf3 Nxe4 d4 d5 Bd3 Be7 0-0 Bf5
-e4 e5 Nf3 Nf6 Nxe5 d6 Nf3 Nxe4 Nc3
+e4 e5 Nf3 Nf6 Nxe5 d6 Nf3 Nxe4 Nc3 Nxc3 dxc3 Be7
 e4 e5 Nf3 Nf6 Nxe5 d6 Nf3 Nxe4 d3
 e4 e5 Nf3 Nf6 Nxe5 d6 Nf3 Nxe4 Qe2
 e4 e5 Nf3 Nf6 Nxe5 Nc6 d4 Qe7 Nc3 Nc3 Nxe5 dxe5 Qxe5 f4 Qe6
@@ -42,6 +42,7 @@ e4 e5 Nf3 Nf6 Bc4 Nxe4 0-0 d5 Bb3 Nc6 Re1 Bc5
 e4 e5 Nf3 Nf6 Bc4 Nxe4 0-0 d5 Re1 Nxf2
 e4 e5 Nf3 Nf6 Bc4 Nxe4 Bxf7+ Kxf7 Nxe5+ Kg8 Qh5 Qe7
 e4 e5 Nf3 Nf6 Bc4 Nxe4 Bxf7+ Kxf7 Nxe5+ Kg8 Qf3
+e4 e5 Nf3 Nf6 Bc4 Nxe4 d3
 e4 e5 Nf3 Nf6 Bd3 d5
 4 e5 Nf3 Nf6 Bc4 Nxe4 Qe2 d5 d3 Nc5
 e4 e5 Nf3 Nf6 Nc3 Nc6 Bb5 Nd4 Nxd4 exd4 e5 dxc3 exf6 Qxf6 dxc3 Bc5
@@ -75,3 +76,5 @@ e4 e5 Qh5
 e4 e5 d4 exd4 c3 Qe7 cxd4 Qxe4+
 e4 e5 d4 exd4 Nf3 Bb4+ Nd2 Nc6
 e4 e5 d3
+c4 e6
+Nf3 d5
