@@ -1,0 +1,2 @@
+d4 Nf6 c4 e6 Nc3 Bb4 a3 Bxc3+ bxc3 0-0
+e4 e5 Nf3 Nc6 Bb5
