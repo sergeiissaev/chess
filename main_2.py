@@ -105,6 +105,8 @@ def main(move_sequence, color: int):
                 opp_move = board.parse_san(opp_move)
                 board.push(opp_move)
             except:
+                if (turn * 2) + 1 != len(move_sequence):
+                    raise ValueError(f"{turn=} {len(move_sequence)=}")
                 draw_board(screen)
                 draw_pieces(screen, board, color)
                 pygame.display.flip()
@@ -118,7 +120,7 @@ def main(move_sequence, color: int):
 
 
 if __name__ == "__main__":
-    version = 2
+    version = 1
 
     filename, number_of_openings, move_sequence, rand_choice = select_random_opening(white_file=Path(f"white_{version}.txt"), black_file=Path(f"black_{version}.txt"))
     print("Welcome to the custom chess opening drilling app")

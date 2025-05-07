@@ -1,65 +1,56 @@
 import heapq
+import random
 from io import StringIO
 from random import randint
 from typing import List
 
-import pandas as pd
-import requests
+import numpy as np
 
 
 class Solution:
 
-    def maxMeetingRooms(self, rooms) -> int:
-        rooms = sorted(rooms)
-        max_rooms = 0
-        current_rooms = 0
-        end_time_heap = []
-        for r_s, r_e in rooms:
-            while end_time_heap and end_time_heap[0] <= r_s:
-                heapq.heappop(end_time_heap)
-                current_rooms -= 1
+    def maxMeetingRooms(self, logs, N) -> int:
+        rank = [1] * N
+        parent = [i for i in range(N)]
+        def find(n):
+            if parent[n] != n:
+                return find(parent[n])
+            return n
 
-            current_rooms += 1
-            max_rooms = max(max_rooms, current_rooms)
-            heapq.heappush(end_time_heap, r_e)
-
-        return max_rooms
-
-
-def read_csv_data(url: str) -> pd.DataFrame:
-    """ Helper function to read the data from the Google Drive URL """
-    df_list = pd.read_html(url, encoding='utf-8', header=0)
-    df = df_list[0]
-    df["x-coordinate"] = df["x-coordinate"].astype("int")
-    df["y-coordinate"] = df["y-coordinate"].astype("int")
-    return df
+        def union(a, b, n):
+            parent_a = find(a)
+            parent_b = find(b)
+            if parent_a != parent_b:
+                n -= 1
+                if rank[parent_a] > rank[parent_b]:
+                    rank[parent_a] += rank[parent_b]
+                    parent[parent_b] = a
+                else:
+                    rank[parent_b] += rank[parent_a]
+                    parent[parent_a] = b
+            return n
 
 
-def decode_message(url: str) -> None:
-    """ Main function to read the table and print the hidden message """
-    df = read_csv_data(url=url)
-    grid_width = df['x-coordinate'].max()
-    grid_length = df['y-coordinate'].max()
-    grid = [[' ' for _ in range(grid_width + 1)] for _ in range(grid_length + 1)]
-    data = df[["Character", "x-coordinate", "y-coordinate"]].values
-    for char, x, y in data:
-        grid[y][x] = char
-    for row in reversed(grid):
-        print(''.join(row))
 
 
-decode_message(url='https://docs.google.com/document/d/e/2PACX-1vRMx5YQlZNa3ra8dYYxmv-QIQ3YJe8tbI3kqcuC7lQiZm-CSEznKfN_HYNSpoXcZIV3Y_O3YoUB1ecq/pub?output=csv')
-df = read_csv_data(url='https://docs.google.com/document/d/e/2PACX-1vRMx5YQlZNa3ra8dYYxmv-QIQ3YJe8tbI3kqcuC7lQiZm-CSEznKfN_HYNSpoXcZIV3Y_O3YoUB1ecq/pub?output=csv')
+        logs = sorted(logs)
+        for log in logs:
+            time, p1, p2 = log
+            N = union(p1, p2, N)
+            if N == 1: return time
 
-url_response = requests.get('https://docs.google.com/document/d/e/2PACX-1vRMx5YQlZNa3ra8dYYxmv-QIQ3YJe8tbI3kqcuC7lQiZm-CSEznKfN_HYNSpoXcZIV3Y_O3YoUB1ecq/pub')
-url_response.raise_for_status()
-url_text = url_response.text
-row_start_text = '</span></p></td></tr><tr class="c2"><td class="c0" colspan="1" rowspan="1"><p class="c3"><span class="c1">'
-url_text_split_rows = url_text.split(row_start_text)
-for row in range(2, len(url_text_split_rows)):
-    text = url_text_split_rows[row]
-    #<span class="c3">
+        return -1
 
 
-df = pd.DataFrame(StringIO(url_response.text))
-print(df)
+#print("".join(a for a in np.random.choice([".", "R", "L", ".", "."], random.randint(1, 10))))
+print([random.randint(1, 2) for _ in range(3)])
+sol = Solution()
+logs =  [
+    [1, 0, 1],
+    [2, 1, 2],
+    [3, 2, 3],
+    [4, 3, 4],
+    [5, 4, 0]
+]
+N = 5
+print(sol.maxMeetingRooms(logs=logs, N=N))
